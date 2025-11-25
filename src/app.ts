@@ -15,6 +15,7 @@ export const corsOptions = {
     "http://localhost:3001",
     "http://localhost:4001",
     "http://139.59.163.31:4001",
+    "https://shorts-flix.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCh"],
   allowedHeaders: ["Content-Type", "Authorization"],
