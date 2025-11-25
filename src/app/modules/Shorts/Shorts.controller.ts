@@ -38,8 +38,20 @@ export const getAllShorts = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+//get short by id
+const getShortById = catchAsync(async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+  const result = ShortsService.getShortById(id);
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "Shorts retrieved successfully!",
+    data: result,
+  });
+});
 
 export const ShortsController = {
   addNewShorts,
   getAllShorts,
+  getShortById,
 };

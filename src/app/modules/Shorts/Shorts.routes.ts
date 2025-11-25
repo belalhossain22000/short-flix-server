@@ -14,4 +14,6 @@ router.post(
 
 router.get("/", ShortsController.getAllShorts);
 
+router.get("/:id", ShortsController.getShortById);
+
 export const ShortsRoutes = router;

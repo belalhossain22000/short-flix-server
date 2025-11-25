@@ -1,3 +1,4 @@
+import ApiError from "../../../errors/ApiErrors";
 import { shorts } from "../../db/shorts";
 import { GetShortsOptions, ShortVideo } from "./Shorts.interface";
 
@@ -61,7 +62,16 @@ const getAllShorts = (
   };
 };
 
+const getShortById = (id: number): ShortVideo => {
+  const short = shorts.find((s) => s.id === id);
+  if (!short) {
+    throw new ApiError(404, `Short with id ${id} not found`);
+  }
+  return short;
+};
+
 export const ShortsService = {
   addNewShorts,
   getAllShorts,
+  getShortById,
 };
