@@ -1,5 +1,1 @@
-export type TShorts = {
-    id: string;
-    name: string;
-    email: string;
-}
+// Shorts.interface: Module file for the Shorts.interface functionality.
