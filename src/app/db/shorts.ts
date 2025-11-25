@@ -1,4 +1,6 @@
-export const shorts = [
+import { ShortVideo } from "../modules/Shorts/Shorts.interface";
+
+export const shorts: ShortVideo[] = [
   {
     id: 1,
     videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",

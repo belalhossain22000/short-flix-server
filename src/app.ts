@@ -5,6 +5,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import GlobalErrorHandler from "./app/middlewares/globalErrorHandler";
 import router from "./app/routes";
+import morgan from "morgan";
 
 
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(morgan("dev"));
 
 // Route handler for root endpoint
 app.get("/", (req: Request, res: Response) => {
@@ -33,7 +35,7 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Router setup
-app.use("/api/v1", router);
+app.use("/api", router);
 
 // Error handling middleware
 app.use(GlobalErrorHandler);
